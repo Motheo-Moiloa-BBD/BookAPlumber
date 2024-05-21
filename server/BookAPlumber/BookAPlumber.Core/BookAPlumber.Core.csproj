@@ -6,11 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\DTO\" />
-    <Folder Include="Models\Domain\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Mappings\" />
-  </ItemGroup>
-
 </Project>
