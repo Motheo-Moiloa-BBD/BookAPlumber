@@ -1,4 +1,5 @@
-﻿using BookAPlumber.Core.Models.DTO;
+﻿using BookAPlumber.Core.Attributes;
+using BookAPlumber.Core.Models.DTO;
 using BookAPlumber.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +17,7 @@ namespace BookAPlumber.API.Controllers
         }
 
         [HttpPost]
+        [ValidateModel]
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDTO registerDTO)
         {
@@ -25,6 +27,7 @@ namespace BookAPlumber.API.Controllers
         }
 
         [HttpPost]
+        [ValidateModel]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO loginDTO)
         {

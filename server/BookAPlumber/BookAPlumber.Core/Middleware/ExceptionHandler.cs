@@ -10,13 +10,11 @@ namespace BookAPlumber.Core.Middleware
     {
         private readonly ILogger<ExceptionHandler> logger;
         private readonly RequestDelegate next;
-
         public ExceptionHandler(ILogger<ExceptionHandler> logger, RequestDelegate next)
         {
             this.logger = logger;
             this.next = next;
         }
-
         public async Task InvokeAsync(HttpContext httpContext)
         {
             try
@@ -28,7 +26,6 @@ namespace BookAPlumber.Core.Middleware
                 await HandleExceptionAsync(httpContext, ex);
             }
         }
-
         public async Task HandleExceptionAsync(HttpContext httpContext, Exception ex)
         {
             ExceptionResponse exceptionResponse = new ExceptionResponse();
@@ -75,7 +72,6 @@ namespace BookAPlumber.Core.Middleware
                     break;
 
             }
-
             await httpContext.Response.WriteAsync(JsonSerializer.Serialize(exceptionResponse));
         }
     }

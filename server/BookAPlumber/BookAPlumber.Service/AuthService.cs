@@ -18,12 +18,11 @@ namespace BookAPlumber.Service
         }
         public async Task<IdentityUser> RegisterUser(RegisterDTO registerDTO)
         {
-            //TODO check if email is already existing
             var existingEmail = await userManager.FindByEmailAsync(registerDTO.Username);
 
             if (existingEmail != null)
             {
-                throw new DuplicateException($"The username already exists.");
+                throw new DuplicateException("The username already exists.");
             }
 
             var identityUser = new IdentityUser
@@ -48,7 +47,7 @@ namespace BookAPlumber.Service
                 }
             }
 
-            throw new BadRequestException("There was a problem when registering the user");
+            throw new BadRequestException("There was a problem when registering the user.");
         }
         public async Task<LoginResponseDTO> LoginUser(LoginDTO loginDTO)
         {
