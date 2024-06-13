@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BookAPlumber.Core.Models.Domain
 {
@@ -16,7 +11,6 @@ namespace BookAPlumber.Core.Models.Domain
         public Guid RepairId { get; set; }
 
         //Navigation Properties
-
         public Repair Repair { get; set; }
     }
 }

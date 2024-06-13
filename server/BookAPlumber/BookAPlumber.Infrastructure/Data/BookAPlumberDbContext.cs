@@ -1,5 +1,4 @@
 ﻿using BookAPlumber.Core.Models.Domain;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookAPlumber.Infrastructure.Data

@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\BookAPlumber.Core\BookAPlumber.Core.csproj" />
     <ProjectReference Include="..\BookAPlumber.Infrastructure\BookAPlumber.Infrastructure.csproj" />
     <ProjectReference Include="..\BookAPlumber.Service\BookAPlumber.Service.csproj" />

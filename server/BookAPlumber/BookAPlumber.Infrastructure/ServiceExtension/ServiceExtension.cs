@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using BookAPlumber.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using BookAPlumber.Core.Interfaces;
+using BookAPlumber.Infrastructure.Repositories;
 
 namespace BookAPlumber.Infrastructure.ServiceExtension
 {
@@ -18,7 +20,10 @@ namespace BookAPlumber.Infrastructure.ServiceExtension
             services.AddDbContext<BookAPlumberAuthDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("BookAPlumberConnectionString"));
-            }); 
+            });
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ITokenRepository, TokenRepository>();
 
             return services;
         }
